@@ -15,7 +15,7 @@ pipeline {
         }
          stage('deploy code') {
             steps {
-sshPublisher(publishers: [sshPublisherDesc(configName: '192.168.2.112', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'echo "transfer files success..."', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: ${remote_dir}, remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'target/**')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])            }
+sshPublisher(publishers: [sshPublisherDesc(configName: '192.168.2.112', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'echo "transfer files success..."', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '${remote_dir}/', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'target/**')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])            }
         }
     }
 }
